@@ -12,6 +12,53 @@
 </head>
 
 <body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.js"></script>
+
+    <script type="text/javascript">
+        var clientId = 'client_id' + Math.floor((Math.random() * 1000) + 1);
+        client = new Paho.MQTT.Client("driver.cloudmqtt.com", 18658, clientId);
+
+        client.onConnectionLost = onConnectionLost;
+        client.onMessageArrived = onMessageArrived;
+
+        var options = {
+            useSSL: true,
+            userName: "hlgsjgtn",
+            password: "k1R00h5NWOA6",
+            onSuccess: onConnect,
+            onFailure: doFail
+        }
+
+        client.connect(options);
+
+        function onConnect() {
+            console.log("Conexión exitosa!!!");
+            client.subscribe('salidaDAP');
+        }
+
+        function onMessageArrived(message) {
+            console.log("Un mensaje ha llegado: " + message.payloadString);
+        }
+
+        function doFail(e) {
+            console.log(e);
+        }
+
+        function onConnectionLost(responseObject) {
+            if (responseObject.errorCode !== 0) {
+                console.log("onConnectionLost: " + responseObject.errorMessage);
+            }
+        }
+
+        function command(value) {
+            console.log(value);
+            message = new Paho.MQTT.Message(value + "");
+            message.destinationName = "entradaDAP";
+            client.send(message);
+        }
+
+    </script>
     <header>
         <nav>
             <a href="#inicio">Inicio</a>
@@ -67,7 +114,7 @@
                     <p>Aplicar el conocimiento adquirido a lo largo del semestre para poder desarrollar un cubo led que contara con dimensiones de 4x4x4, tambien crear diferentes animaciones con él.</p>
                     <h3><span>2</span>Materiales a utilizar</h3>
                     <p>◉64 Leds<br>
-                        ◉4 resistencias de  ohm<br>
+                        ◉3 resistencias de  ohm<br>
                         ◉Una computadora<br>
                         ◉Atom/Visual Studio Code<br>
                         ◉Cautin <br>
@@ -85,7 +132,8 @@
                     <div class="imagen-port">
                         <img src="img/img1.jpg" alt="">
                         <div class="hover-galeria">
-                            <a href="/?actval=0"><img src="img/icono1.png" alt=""></a>
+
+                            <img src="img/icono1.png" alt="" onclick="command(0)">
                             <p>Cargar</p>
                             
                         </div>
@@ -93,49 +141,49 @@
                     <div class="imagen-port">
                         <img src="img/img2.jpg" alt="">
                         <div class="hover-galeria">
-                            <a href="/?actval=1"><img src="img/icono1.png" alt=""></a>
+                            <img src="img/icono1.png" alt="" onclick="command(1)">
                             <p>Cargar</p>
                         </div>
                     </div>
                     <div class="imagen-port">
                         <img src="img/img3.jpg" alt="">
                         <div class="hover-galeria">
-                            <a href="/?actval=2"><img src="img/icono1.png" alt=""></a>
+                            <img src="img/icono1.png" alt="" onclick="command(2)">
                             <p>Cargar</p>
                         </div>
                     </div>
                     <div class="imagen-port">
                         <img src="img/img1.jpg" alt="">
                         <div class="hover-galeria">
-                            <a href="/?actval=3"><img src="img/icono1.png" alt=""></a>
+                            <img src="img/icono1.png" alt="" onclick="command(3)">
                             <p>Cargar</p>
                         </div>
                     </div>
                     <div class="imagen-port">
                         <img src="img/img4.jpg" alt="">
                         <div class="hover-galeria">
-                            <a href="/?actval=4"><img src="img/icono1.png" alt=""></a>
+                            <img src="img/icono1.png" alt="" onclick="command(4)">
                             <p>Cargar</p>
                         </div>
                     </div>
                     <div class="imagen-port">
                         <img src="img/img5.jpg" alt="">
                         <div class="hover-galeria">
-                            <a href="/?actval=5"><img src="img/icono1.png" alt=""></a>
+                            <img src="img/icono1.png" alt="" onclick="command(5)">
                             <p>Cargar</p>
                         </div>
                     </div>
                     <div class="imagen-port">
                         <img src="img/img6.jpg" alt="">
                         <div class="hover-galeria">
-                            <a href="/?actval=6"><img src="img/icono1.png" alt=""></a>
+                            <img src="img/icono1.png" alt="" onclick="command(6)">
                             <p>Cargar</p>
                         </div>
                     </div>
                     <div class="imagen-port">
                         <img src="img/img7.jpg" alt="">
                         <div class="hover-galeria">
-                            <a href="/?actval=7"><img src="img/icono1.png" alt=""></a>
+                            <img src="img/icono1.png" alt="" onclick="command(7)">
                             <p>Cargar</p>
                         </div>
                     </div>
@@ -143,7 +191,7 @@
             </div>
         </section>
     </div>
-
+       
         <section class="about-services">
             <div class="contenedor">
                 <h2 class="titulo">Nuestros servicios</h2>
