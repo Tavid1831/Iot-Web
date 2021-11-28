@@ -15,6 +15,32 @@ body {
     margin: auto;
     overflow: hidden;
 }
+.btn-group button {
+    background-color: purple; /* Green background */
+    border: 1px solid black; /* Green border */
+    color: white; /* White text */
+    padding: 10px 24px; /* Some padding */
+    cursor: pointer; /* Pointer/hand icon */
+    float: left; /* Float the buttons side by side */
+ 
+  }
+  
+  /* Clear floats (clearfix hack) */
+  .btn-group:after {
+    content: "";
+    clear: both;
+    display: table;
+    
+  }
+  
+  .btn-group button:not(:last-child) {
+    border-right: none; /* Prevent double borders */
+  }
+  
+  /* Add a background color on hover */
+  .btn-group button:hover {
+    background-color: #642a73;
+  }
 
 .titulo {
     color: #642a73;
@@ -30,9 +56,9 @@ header {
     height: 600px;
     background: aqua;
     /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, hsla(187, 95%, 50%, 0.349), hsla(317, 45%, 52%, 0.664)), url(../img/portada.jpg);
+    background: -webkit-linear-gradient(to right, hsla(187, 95%, 50%, 0.349), hsla(317, 45%, 52%, 0.664)), url(https://bucket-dany.s3.amazonaws.com/imagenes-Iot/portada.jpg);
     /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, hsla(187, 95%, 50%, 0.349), hsla(317, 45%, 52%, 0.664)), url(../img/portada.jpg);
+    background: linear-gradient(to right, hsla(187, 95%, 50%, 0.349), hsla(317, 45%, 52%, 0.664)), url(https://bucket-dany.s3.amazonaws.com/imagenes-Iot/portada.jpg);
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background-size: cover;
     background-attachment: fixed;
