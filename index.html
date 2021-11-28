@@ -14,16 +14,16 @@
 <body>
     <header>
         <nav>
-            <a href="#">Inicio</a>
-            <a href="#">Acerca de</a>
-            <a href="#">Portafolio</a>
-            <a href="#">Servicios</a>
-            <a href="#">Contacto</a>
-        </nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#integrantes">Integrantes</a>
+            <a href="#descripcion">Descripcion</a>
+            <a href="#animaciones">Animaciones</a>
+            <a href="#contacto">Contacto</a>
+        </nav><div id =inicio>
         <section class="textos-header">
             <h1>INTEGRACIÓN DE SISTEMAS Y ARQUITECTURAS</h1>
-            <h2>PROYECTO CUBO LED & SP32</h2>
-        </section>
+            <h2>PROYECTO CUBO LED & ESP32</h2>
+        </section></div>
         <div class="wave" style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none"
                 style="height: 100%; width: 100%;">
                 <path d="M0.00,49.98 C150.00,150.00 349.20,-50.00 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
@@ -31,87 +31,7 @@
             </svg></div>
     </header>
     <main>
-        <section class="contenedor sobre-nosotros">
-            <h2 class="titulo">Nuestro producto</h2>
-            <div class="contenedor-sobre-nosotros">
-                <img src="img/ilustracion2.svg" alt="" class="imagen-about-us">
-                <div class="contenido-textos">
-                    <h3><span>1</span>Objetivo</h3>
-                    <p>Aplicar el conocimiento adquirido a lo largo del semestre para poder desarrollar un cubo led que contara con dimensiones de 4x4x4, tambien crear diferentes animaciones con él.</p>
-                    <h3><span>2</span>Materiales a utilizar</h3>
-                    <p>◉64 Leds<br>
-                        ◉3 resistencias de  ohm<br>
-                        ◉Una computadora<br>
-                        ◉Atom/Visual Studio Code<br>
-                        ◉Cautin <br>
-                        ◉Estaño<br>
-                    </p>
-                </div>
-            </div>
-        </section>
-        <section class="portafolio">
-            <div class="contenedor">
-                <h2 class="titulo">Animaciones</h2>
-                <div class="galeria-port">
-                    <div class="imagen-port">
-                        <img src="img/img1.jpg" alt="">
-                        <div class="hover-galeria">
-                            <img src="img/icono1.png" alt="">
-                            <p>Cargar</p>
-                        </div>
-                    </div>
-                    <div class="imagen-port">
-                        <img src="img/img2.jpg" alt="">
-                        <div class="hover-galeria">
-                            <img src="img/icono1.png" alt="">
-                            <p>Cargar</p>
-                        </div>
-                    </div>
-                    <div class="imagen-port">
-                        <img src="img/img3.jpg" alt="">
-                        <div class="hover-galeria">
-                            <img src="img/icono1.png" alt="">
-                            <p>Cargar</p>
-                        </div>
-                    </div>
-                    <div class="imagen-port">
-                        <img src="img/img1.jpg" alt="">
-                        <div class="hover-galeria">
-                            <img src="img/icono1.png" alt="">
-                            <p>Cargar</p>
-                        </div>
-                    </div>
-                    <div class="imagen-port">
-                        <img src="img/img4.jpg" alt="">
-                        <div class="hover-galeria">
-                            <img src="img/icono1.png" alt="">
-                            <p>Cargar</p>
-                        </div>
-                    </div>
-                    <div class="imagen-port">
-                        <img src="img/img5.jpg" alt="">
-                        <div class="hover-galeria">
-                            <img src="img/icono1.png" alt="">
-                            <p>Cargar</p>
-                        </div>
-                    </div>
-                    <div class="imagen-port">
-                        <img src="img/img6.jpg" alt="">
-                        <div class="hover-galeria">
-                            <img src="img/icono1.png" alt="">
-                            <p>Cargar</p>
-                        </div>
-                    </div>
-                    <div class="imagen-port">
-                        <img src="img/img7.jpg" alt="">
-                        <div class="hover-galeria">
-                            <img src="img/icono1.png" alt="">
-                            <p>Cargar</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <div id="integrantes">
         <section class="clientes contenedor">
             <h2 class="titulo">Integrantes</h2>
             <div class="cards">
@@ -136,7 +56,94 @@
                         
                     </div>
             </div>
+        </section></div>
+        <div id="descripcion">
+        <section class="contenedor sobre-nosotros">
+            <h2 class="titulo">Nuestro Cubo</h2>
+            <div class="contenedor-sobre-nosotros">
+                <img src="img/ilustracion2.svg" alt="" class="imagen-about-us">
+                <div class="contenido-textos">
+                    <h3><span>1</span>Objetivo</h3>
+                    <p>Aplicar el conocimiento adquirido a lo largo del semestre para poder desarrollar un cubo led que contara con dimensiones de 4x4x4, tambien crear diferentes animaciones con él.</p>
+                    <h3><span>2</span>Materiales a utilizar</h3>
+                    <p>◉64 Leds<br>
+                        ◉3 resistencias de  ohm<br>
+                        ◉Una computadora<br>
+                        ◉Atom/Visual Studio Code<br>
+                        ◉Cautin <br>
+                        ◉Estaño<br>
+                    </p>
+                </div>
+            </div>
         </section>
+    </div>
+    <div id="animaciones">
+        <section class="portafolio">
+            <div class="contenedor">
+                <h2 class="titulo">Animaciones</h2>
+                <div class="galeria-port">
+                    <div class="imagen-port">
+                        <img src="img/img1.jpg" alt="">
+                        <div class="hover-galeria">
+                            <a href="/?actval=0"><img src="img/icono1.png" alt=""></a>
+                            <p>Cargar</p>
+                            
+                        </div>
+                    </div>
+                    <div class="imagen-port">
+                        <img src="img/img2.jpg" alt="">
+                        <div class="hover-galeria">
+                            <a href="/?actval=1"><img src="img/icono1.png" alt=""></a>
+                            <p>Cargar</p>
+                        </div>
+                    </div>
+                    <div class="imagen-port">
+                        <img src="img/img3.jpg" alt="">
+                        <div class="hover-galeria">
+                            <a href="/?actval=2"><img src="img/icono1.png" alt=""></a>
+                            <p>Cargar</p>
+                        </div>
+                    </div>
+                    <div class="imagen-port">
+                        <img src="img/img1.jpg" alt="">
+                        <div class="hover-galeria">
+                            <a href="/?actval=3"><img src="img/icono1.png" alt=""></a>
+                            <p>Cargar</p>
+                        </div>
+                    </div>
+                    <div class="imagen-port">
+                        <img src="img/img4.jpg" alt="">
+                        <div class="hover-galeria">
+                            <a href="/?actval=4"><img src="img/icono1.png" alt=""></a>
+                            <p>Cargar</p>
+                        </div>
+                    </div>
+                    <div class="imagen-port">
+                        <img src="img/img5.jpg" alt="">
+                        <div class="hover-galeria">
+                            <a href="/?actval=5"><img src="img/icono1.png" alt=""></a>
+                            <p>Cargar</p>
+                        </div>
+                    </div>
+                    <div class="imagen-port">
+                        <img src="img/img6.jpg" alt="">
+                        <div class="hover-galeria">
+                            <a href="/?actval=6"><img src="img/icono1.png" alt=""></a>
+                            <p>Cargar</p>
+                        </div>
+                    </div>
+                    <div class="imagen-port">
+                        <img src="img/img7.jpg" alt="">
+                        <div class="hover-galeria">
+                            <a href="/?actval=7"><img src="img/icono1.png" alt=""></a>
+                            <p>Cargar</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+       
         <section class="about-services">
             <div class="contenedor">
                 <h2 class="titulo">Nuestros servicios</h2>
@@ -175,7 +182,9 @@
                 <p>BENEMÉRITA UNIVERSIDAD AUTÓNOMA DE PUEBLA</p>
             </div>
         </div>
-        <h2 class="titulo-final">&copy; DAVID HERNANDEZ VÁZQUEZ | DANIEL ANTONIO POBLANO | ERIK H. NUÑEZ GRAJALES </h2>
+        <div id="contacto">
+        <h2 class="titulo-final">&copy; DAVID HERNANDEZ VÁZQUEZ | DANIEL ANTONIO POBLANO | ERICK H. NUÑEZ GRAJALES </h2>
+    </div>
     </footer>
 </body>
 
