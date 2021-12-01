@@ -1,26 +1,459 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Página web IOT</title>
-    <link rel="shortcut icon" href="img/iconoPestaña.png" type="image/x-icon">
-    <link rel="stylesheet" href="css/estilos.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <meta charset="UTF-8"></meta>
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  ></meta>
+
+  <meta
+    http-equiv="X-UA-Compatible"
+    content="ie=edge"
+  ></meta>
+
+  <title>Página web IOT</title>
+
+  <link
+    rel="shortcut icon"
+    href="https://bucket-dany.s3.amazonaws.com/imagenes-Iot/iconos/icono.png"
+    type="image/x-icon"
+  ></link>
+
+  <!-- href="https://bucket-dany.s3.amazonaws.com/imagenes-Iot/css/estilos.css" -->
+
+  <link
+    rel="stylesheet"
+    href="estilos.css"
+  ></link>
+
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+    crossorigin="anonymous"
+  ></link>
 </head>
 
-<body>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.js"
-      type="text/javascript"
-    ></script>
+<body class="animated fadeIn fast">
+  <header class="header">
+    <nav class="navbar navbar-light">
+      <div class="container-fluid">
+        <img
+          src="https://bucket-dany.s3.amazonaws.com/imagenes-Iot/iconos/fcc.png"
+          width="100px"
+        >
 
-    <script type="text/javascript">
-      var clientId = 'client_id' + Math.floor(Math.random() * 1000000 + 1);
+        <img
+          src="https://bucket-dany.s3.amazonaws.com/imagenes-Iot/iconos/escudo_negativo.png"
+          width="100px"
+        >
+      </div>
+    </nav>
+
+    <section class="textos-header">
+      <h1>
+        INTEGRACIÓN DE SISTEMAS Y ARQUITECTURAS
+      </h1>
+
+      <h2>PROYECTO CUBO LED & ESP32</h2>
+    </section>
+
+    <div
+      class="wave"
+      style="height: 150px; overflow: hidden;"
+    >
+      <svg
+        viewBox="0 0 500 150"
+        preserveAspectRatio="none"
+        style="height: 100%; width: 100%;"
+      >
+        <path
+          d="M0.00,49.98 C150.00,150.00 349.20,-50.00 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+          style="stroke: none; fill: #5C7AEA"
+        ></path>
+      </svg>
+    </div>
+  </header>
+
+  <!-- ! INTEGRANTES -->
+
+  <main>
+    <div id="integrantes">
+      <section class="clientes contenedor">
+        <h2 class="titulo">Integrantes</h2>
+
+        <div class="cards">
+          <div class="card">
+            <img src="https://bucket-dany.s3.amazonaws.com/imagenes-Iot/integrantes/daniel.jpg">
+
+            <div class="contenido-texto-card">
+              <h5>Daniel Antonio Poblano</h5>
+            </div>
+          </div>
+
+          <div class="card">
+            <img src="https://bucket-dany.s3.amazonaws.com/imagenes-Iot/integrantes/david.jpeg">
+
+            <div class="contenido-texto-card">
+              <h5>David Hernandez Vazquez</h5>
+            </div>
+          </div>
+
+          <div class="card">
+            <img src="https://bucket-dany.s3.amazonaws.com/imagenes-Iot/integrantes/face3.jpg">
+
+            <div class="contenido-texto-card">
+              <h5>Erick Nuñez Grajales</h5>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ! ANIMACIONES -->
+    <div id="animaciones"></div>
+
+    <h2 class="titulo">Animaciones</h2>
+
+    <div class="container">
+      <div class="row">
+        <!-- # Encender -->
+
+        <div class="col m-4">
+          <div class="card">
+            <!-- <img src="fondo.jpg" class="card-img-top"> -->
+
+            <div class="video">
+              <video
+                muted="muted"
+                loop="loop"
+                preload="none"
+              >
+                <source
+                  src="https://bucket-dany.s3.amazonaws.com/imagenes-Iot/videos/Prender.mp4"
+                  type="video/mp4"
+                ></source>
+              </video>
+            </div>
+
+            <div class="card-body">
+              <h5 class="card-title">Encender</h5>
+
+              <p class="card-text">
+                Esta animacion enciende todo el cubo.
+              </p>
+
+              <div class="d-grid gap-2">
+                <button
+                  type="button"
+                  class="btn btn-primary btn-lg"
+                  onclick="command('a')"
+                >Activar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- # Fin Encender -->
+        <!-- # Apagar -->
+
+        <div class="col m-4">
+          <div class="card">
+            <!-- <img src="fondo.jpg" class="card-img-top"> -->
+
+            <div class="video">
+              <video
+                muted="muted"
+                loop="loop"
+                preload="none"
+              >
+                <source
+                  src="https://bucket-dany.s3.amazonaws.com/imagenes-Iot/videos/apagar.mp4"
+                  type="video/mp4"
+                ></source>
+              </video>
+            </div>
+
+            <div class="card-body">
+              <h5 class="card-title">Apagar</h5>
+
+              <p class="card-text">
+                Esta animacion apaga todo el cubo.
+              </p>
+
+              <div class="d-grid gap-2">
+                <button
+                  type="button"
+                  class="btn btn-primary btn-lg"
+                  onclick="command('b')"
+                >Activar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- # Fin Apagar -->
+        <!-- # Secuencia -->
+
+        <div class="col m-4">
+          <div class="card">
+            <!-- <img src="fondo.jpg" class="card-img-top"> -->
+
+            <div class="video">
+              <video
+                muted="muted"
+                loop="loop"
+                preload="none"
+              >
+                <source
+                  src="https://bucket-dany.s3.amazonaws.com/imagenes-Iot/videos/secuencial.mp4"
+                  type="video/mp4"
+                ></source>
+              </video>
+            </div>
+
+            <div class="card-body">
+              <h5 class="card-title">Secuencial</h5>
+
+              <p class="card-text">
+                Esta animacion prende y apaga los leds de forma secuencial.
+              </p>
+
+              <div class="d-grid gap-2">
+                <button
+                  type="button"
+                  class="btn btn-primary btn-lg"
+                  onclick="command('c')"
+                >Activar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- # Fin Secuencia -->
+        <!-- # Espiral -->
+
+        <div class="col m-4">
+          <div class="card">
+            <!-- <img src="fondo.jpg" class="card-img-top"> -->
+
+            <div class="video">
+              <video
+                muted="muted"
+                loop="loop"
+                preload="none"
+              >
+                <source
+                  src="https://bucket-dany.s3.amazonaws.com/imagenes-Iot/videos/espiral.mp4"
+                  type="video/mp4"
+                ></source>
+              </video>
+            </div>
+
+            <div class="card-body">
+              <h5 class="card-title">Espiral</h5>
+
+              <p class="card-text">
+                Esta animacion dibuja una espiral.
+              </p>
+
+              <div class="d-grid gap-2">
+                <button
+                  type="button"
+                  class="btn btn-primary btn-lg"
+                  onclick="command('d')"
+                >Activar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- # Fin Espiral -->
+      </div>
+
+      <!-- ! Termino de las 3 animaciones -->
+
+      <div class="row">
+        <!-- # Explosiones -->
+
+        <div class="col m-4">
+          <div class="card">
+            <!-- <img src="fondo.jpg" class="card-img-top"> -->
+
+            <div class="video">
+              <video
+                muted="muted"
+                loop="loop"
+                preload="none"
+              >
+                <source
+                  src="https://bucket-dany.s3.amazonaws.com/imagenes-Iot/videos/explociones.mp4"
+                  type="video/mp4"
+                ></source>
+              </video>
+            </div>
+
+            <div class="card-body">
+              <h5 class="card-title">Explosiones</h5>
+
+              <p class="card-text">
+                Esta aniamcion prende los leds aleatoriamente en forma de explosion.
+              </p>
+
+              <div class="d-grid gap-2">
+                <button
+                  type="button"
+                  class="btn btn-primary btn-lg"
+                  onclick="command('e')"
+                >Activar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- # Fin Explosiones -->
+        <!-- # Sube y baja -->
+
+        <div class="col m-4">
+          <div class="card">
+            <!-- <img src="fondo.jpg" class="card-img-top"> -->
+
+            <div class="video">
+              <video
+                muted="muted"
+                loop="loop"
+                preload="none"
+              >
+                <source
+                  src="https://bucket-dany.s3.amazonaws.com/imagenes-Iot/videos/sube+y+baja.mp4"
+                  type="video/mp4"
+                ></source>
+              </video>
+            </div>
+
+            <div class="card-body">
+              <h5 class="card-title">Sube y baja</h5>
+
+              <p class="card-text">Esta animacion prende todos los leds de ariba a bajo y viceversa.</p>
+
+              <div class="d-grid gap-2">
+                <button
+                  type="button"
+                  class="btn btn-primary btn-lg"
+                  onclick="command('f')"
+                >Activar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- # Fin Sube y baja -->
+        <!-- # Parpadeo -->
+
+        <div class="col m-4">
+          <div class="card">
+            <!-- <img src="fondo.jpg" class="card-img-top"> -->
+
+            <div class="video">
+              <video
+                muted="muted"
+                loop="loop"
+                preload="none"
+              >
+                <source
+                  src="https://bucket-dany.s3.amazonaws.com/imagenes-Iot/videos/parpadeo.mp4"
+                  type="video/mp4"
+                ></source>
+              </video>
+            </div>
+
+            <div class="card-body">
+              <h5 class="card-title">Parpadeo</h5>
+
+              <p class="card-text">Esta animacion prende y apaga los leds haciendo efecto de parpadeo.</p>
+
+              <div class="d-grid gap-2">
+                <button
+                  type="button"
+                  class="btn btn-primary btn-lg"
+                  onclick="command('g')"
+                >Activar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- # Fin Parpadeo -->
+        <!-- # Zic Zac -->
+
+        <div class="col m-4">
+          <div class="card">
+            <!-- <img src="fondo.jpg" class="card-img-top"> -->
+
+            <div class="video">
+              <video
+                muted="muted"
+                loop="loop"
+                preload="none"
+              >
+                <source
+                  src="https://bucket-dany.s3.amazonaws.com/imagenes-Iot/videos/ziczac.mp4"
+                  type="video/mp4"
+                ></source>
+              </video>
+            </div>
+
+            <div class="card-body">
+              <h5 class="card-title">ZIC ZAC</h5>
+
+              <p class="card-text">Eta animacion prende los leds en forma de zic zac de izqiuierda a derecha.</p>
+
+              <div class="d-grid gap-2">
+                <button
+                  type="button"
+                  class="btn btn-primary btn-lg"
+                  onclick="command('h')"
+                >Activar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- # Fin Zic Zac -->
+      </div>
+
+      <!-- !fin de las 3 animacioes -->
+    </div>
+  </main>
+
+  <!-- # Footer -->
+
+  <footer>
+    <div class="contenedor-footer">
+      <div class="content-foo">
+        <h4>
+          BENEMÉRITA UNIVERSIDAD AUTÓNOMA DE PUEBLA
+        </h4>
+
+        <p>Proyecto Final 2021</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- # Fin Footer -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.js"
+    type="text/javascript"
+  ></script>
+
+  <!-- # Codigo de funcionalidades -->
+
+  <script type="text/javascript">
+    var clientId = 'client_id' + Math.floor(Math.random() * 1000000 + 1);
       client = new Paho.MQTT.Client('driver.cloudmqtt.com', 38658, clientId);
 
       client.onConnectionLost = onConnectionLost;
@@ -61,179 +494,18 @@
         message.destinationName = 'Entrada';
         client.send(message);
       }
-    </script>
-    <header>
-        <section class="textos-header">
-            <h1>INTEGRACIÓN DE SISTEMAS Y ARQUITECTURAS</h1>
-            <h2>PROYECTO CUBO LED & ESP32</h2>
-        </section></div>
-        <div class="wave" style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none"
-                style="height: 100%; width: 100%;">
-                <path d="M0.00,49.98 C150.00,150.00 349.20,-50.00 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
-                    style="stroke: none; fill: #fff;"></path>
-            </svg></div>
-    </header>
-    <main>
-        <div id="integrantes">
-        <section class="clientes contenedor">
-            <h2 class="titulo">Integrantes</h2>
-            <div class="cards">
-                <div class="card">
-                    <img src="https://bucket-dany.s3.amazonaws.com/imagenes-Iot/daniel.jpg" alt="">
-                    <div class="contenido-texto-card">
-                        <h4>Daniel Antonio Poblano</h4>
-                        
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="https://bucket-dany.s3.amazonaws.com/imagenes-Iot/david.jpeg" alt="">
-                    <div class="contenido-texto-card">
-                        <h4>David Hernandez Vazquez</h4>
-                        
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="https://bucket-dany.s3.amazonaws.com/imagenes-Iot/face3.jpg" alt="">
-                    <div class="contenido-texto-card">
-                        <h4>Erick Nuñez Grajales</h4>
-                        
-                    </div>
-            </div>
-        </section></div>
-        <div id="descripcion">
-        <section class="contenedor sobre-nosotros">
-            <h2 class="titulo">Nuestro Cubo</h2>
-            <div class="contenedor-sobre-nosotros">
-                <img src="https://bucket-dany.s3.amazonaws.com/imagenes-Iot/ilustracion2.svg" alt="" class="imagen-about-us">
-                <div class="contenido-textos">
-                    <h3><span>1</span>Objetivo</h3>
-                    <p>Aplicar el conocimiento adquirido a lo largo del semestre para poder desarrollar un cubo led que contara con dimensiones de 4x4x4, tambien crear diferentes animaciones con él.</p>
-                    <h3><span>2</span>Materiales a utilizar</h3>
-                    <p>◉64 Leds<br>
-                        ◉3 resistencias de  ohm<br>
-                        ◉Una computadora<br>
-                        ◉Atom/Visual Studio Code<br>
-                        ◉Cautin <br>
-                        ◉Estaño<br>
-                    </p>
-                </div>
-            </div>
-        </section>
-    </div>
-    <div id="animaciones">
-    </div>
-        
-            <h2 class="titulo">Animaciones</h2>
-            <div class="container">
-     <div class="card-deck">
-       <div class="card">
-         <img class="card-img-top img-fluid" src="images/fondo-1.png" alt="Card image cap">
-         <div class="card-block">
-           <h4 class="card-title">ENCENDER</h4>
-           <p class="card-text">Esta función se encarga de prender todo el cubo, dandole a las columnas carga LOW y a los niveles HIGH.</p>
-         </div>
-         <div class = "btn-group">
-           <button onclick="command('a')" type="button" >Encender</button>
-         </div>
-       </div>
-       <div class="card">
-         <img class="card-img-top img-fluid" src="images/fondo-1.png" alt="Card image cap">
+  </script>
 
-         <div class="card-block">
-           <h4 class="card-title">APAGAR</h4>
-           <p class="card-text">Esta función se encarga de apagar todo el cubo, dandole a las columnas carga HIGH y a los niveles LOW.</p>
-         </div>
-         <div class = "btn-group">
-           <button onclick="command('b')" type="button" >Apagar</button>
-         </div>
-       </div>
-       <div class="card">
-         <img class="card-img-top img-fluid" src="images/fondo-1.png" alt="Card image cap">
+  <script>
+    var figure = $(".video").hover( hoverVideo, hideVideo );
 
-         <div class="card-block">
-           <h4 class="card-title">SECUENCIA</h4>
-           <p class="card-text">Esta funcion se encarga de ir prendiendo los 4 leds de la primera fila y de ahi se pasa a la segunda hasta terminar una cara del cubo, una vez que hizo el recorrido, empieza con la segunda con la misma idea pero de abajo a arriba.</p>
-         </div>
-         <div class = "btn-group">
-           <button onclick="command('c')" type="button" >Secuencia</button>
-         </div>
-       </div>
-     </div>
-   </div>
-   <br>
-   <div class="container">
-     <div class="card-deck">
-       <div class="card">
-         <img class="card-img-top img-fluid" src="images/fondo-1.png" alt="Card image cap">
-         <div class="card-block">
-           <h4 class="card-title">ESPIRAL</h4>
-           <p class="card-text">Esta funcion trabaja por columnas, en un principio se ejecuta la funcion de prender cubo y va de adentro a afueraa apagandolo, una vez que haya terminado el recorrido, lo empieza de afuera a adentro.</p>
-         </div>
-         <div class = "btn-group">
-           <button onclick="command('d')" type="button" >Espiral</button>
-         </div>
-       </div>
-       <div class="card">
-         <img class="card-img-top img-fluid" src="images/fondo-1.png" alt="Card image cap">
-         <div class="card-block">
-           <h4 class="card-title">FLASH</h4>
-           <p class="card-text">Esta función se encarga de prender aleaoriamente leds a lo largo del cubo</p>
-         </div>
-         <div class = "btn-group">
-           <button onclick="command('e')" type="button" >Flash</button>
-         </div>
-       </div>
-       <div class="card">
-         <img class="card-img-top img-fluid" src="images/fondo-1.png" alt="Card image cap">
-         <div class="card-block">
-           <h4 class="card-title">ARRIBA Y ABAJO</h4>
-           <p class="card-text">Esta función se encarga de recorrer de una esquina a la esquina contraria del cubo haciendo un camino que se prende y acaba, de ida y vuelta.</p>
-         </div>
-         <div class = "btn-group">
-           <button onclick="command('f')" type="button" >Arriba y Abajo</button>
-         </div>
-       </div>
-     </div>
-   </div>
-   <br>
-   <div class="container">
-     <div class="card-deck">
-       <div class="card">
-         <img class="card-img-top img-fluid" src="images/fondo-1.png" alt="Card image cap">
-         <div class="card-block">
-           <h4 class="card-title">PARPADEO</h4>
-           <p class="card-text">Esta función se encarga de prender y apagar el cubo repetidas veces</p>
-         </div>
-         <div class = "btn-group">
-           <button onclick="command('g')" type="button" >Parpadeo</button>
-         </div>
-       </div>
-       <div class="card">
-         <img class="card-img-top img-fluid" src="images/fondo-1.png" alt="Card image cap">
-         <div class="card-block">
-           <h4 class="card-title">ZIC ZAC</h4>
-           <p class="card-text">Esta funcion se encarga de crear en si una "vibora" que recorre de un lado a otro del cubo.</p>
-         </div>
-         <div class = "btn-group">
-           <button onclick="command('h')" type="button" >Zic Zac</button>
-         </div>
-       </div>
-     </div>
-   </div>
-   
-    
-    </main>
-    <footer>
-        <div class="contenedor-footer">
-            <div class="content-foo">
-                <h4>ESCUELA</h4>
-                <p>BENEMÉRITA UNIVERSIDAD AUTÓNOMA DE PUEBLA</p>
-            </div>
-        </div>
-        <div id="contacto">
-        <h2 class="titulo-final">&copy; DAVID HERNANDEZ VÁZQUEZ | DANIEL ANTONIO POBLANO | ERICK H. NUÑEZ GRAJALES </h2>
-    </div>
-    </footer>
+function hoverVideo(e) {
+    $('video', this).get(0).play();
+}
+
+function hideVideo(e) {
+    $('video', this).get(0).pause();
+}
+  </script>
 </body>
-
 </html>
